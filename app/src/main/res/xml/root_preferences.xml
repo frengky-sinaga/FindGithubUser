@@ -1,0 +1,24 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/general_header">
+        <Preference
+            android:title="@string/language_title"
+            app:icon="@drawable/ic_language">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.android.settings.LanguageSettings"
+                android:targetPackage="com.android.settings" />
+        </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/reminder_header">
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:icon="@drawable/ic_alarm"
+            app:key="alarm"
+            app:summaryOff="@string/alarm_summaryOff"
+            app:summaryOn="@string/alarm_summaryOn"
+            app:title="@string/alarm_title" />
+    </PreferenceCategory>
+</PreferenceScreen>

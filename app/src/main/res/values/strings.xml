@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">FindGithubUser</string>
+
+    //splash
+    <string name="splashText">Find github user information on this application</string>
+
+    //alarm
+    <string name="alarmMessage">Daily reminder</string>
+
+    //for item_list_github
+    <string name="item_username">Username</string>
+    <string name="item_htmlUrl">Html Url</string>
+    <string name="item_contentDescription">User Image</string>
+
+    //for item_list_favorites
+    <string name="item_name">Username</string>
+    <string name="item_email">Email</string>
+    <string name="item_contentDesc">Delete Favorite</string>
+
+    //fragment_home
+    <string name="tv_homeInformation">Find Github User</string>
+    <string name="find">Find</string>
+
+    //hint searchView
+    <string name="sv_hint">Type username github…</string>
+
+    //for options_menu
+    <string name="opt_search">Search</string>
+    <string name="opt_setting">Settings</string>
+    <string name="opt_favorite">Favorite</string>
+
+    //for favorite_menu
+    <string name="fav_delete">Delete</string>
+
+    //for detailFragment
+    <string name="titleDetail">Detail User</string>
+    <string name="img_detailDescription">Avatar User</string>
+    <string name="failedToLoad">Failed to load detail user</string>
+
+    //for favoritesFragment
+    <string name="toolbar_favorites">Favorites</string>
+    <string name="deleteAllFavorites">All favorites has been deleted</string>
+    <string name="deleteFavorite">has been deleted</string>
+
+    //for include_detail
+    <string name="tv_detailName">Name</string>
+    <string name="tv_detailEmail">Email</string>
+    <string name="tv_detailLocation">Location</string>
+    <string name="tv_detailFollowers">Followers</string>
+    <string name="tv_detailFollowing">Following</string>
+    <string name="tv_detailBio">Bio</string>
+    <string name="tv_detailNameInformation">NameInformation</string>
+    <string name="tv_detailEmailInformation">EmailInformation</string>
+    <string name="tv_detailLocationInformation">LocationInformation</string>
+    <string name="tv_detailFollowersInformation">FollowersInformation</string>
+    <string name="tv_detailFollowingInformation">FollowingInformation</string>
+    <string name="tv_detailBioInformation">BioInformation</string>
+
+    //Preference Titles
+    <string name="general_header">General</string>
+    <string name="reminder_header">Reminder</string>
+
+    //Language Prefs
+    <string name="language_title">Language</string>
+
+    //Alarm Prefs
+    <string name="alarm_title">Alarm</string>
+    <string name="alarm_summaryOn">On</string>
+    <string name="alarm_summaryOff">Off</string>
+</resources>

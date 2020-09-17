@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FindGithubUser</string>
+
+    //splash
+    <string name="splashText">Temukan informasi pengguna github di aplikasi ini</string>
+
+    //alarm
+    <string name="alarmMessage">Pengingat harian</string>
+
+    //for item_list_github
+    <string name="item_username">Username</string>
+    <string name="item_htmlUrl">Html Url</string>
+    <string name="item_contentDescription">User Image</string>
+
+    //for item_list_favorites
+    <string name="item_name">Username</string>
+    <string name="item_email">Email</string>
+    <string name="item_contentDesc">Delete Favorite</string>
+
+    //fragment_home
+    <string name="tv_homeInformation">Find Github User</string>
+    <string name="find">Cari</string>
+
+    //hint searchView
+    <string name="sv_hint">Ketik username github…</string>
+
+    //for options_menu
+    <string name="opt_search">Pencarian</string>
+    <string name="opt_setting">Pengaturan</string>
+    <string name="opt_favorite">Kesukaan</string>
+
+    //for favorite_menu
+    <string name="fav_delete">Delete</string>
+
+    //for detailFragment
+    <string name="titleDetail">Detail Pengguna</string>
+    <string name="img_detailDescription">Avatar User</string>
+    <string name="failedToLoad">Gagal memuat detail pengguna</string>
+
+    //for favoritesFragment
+    <string name="toolbar_favorites">Kesukaan</string>
+    <string name="deleteAllFavorites">Semua kesukaan telah terhapus</string>
+    <string name="deleteFavorite">telah dihapus</string>
+
+    //for include_detail
+    <string name="tv_detailName">Nama</string>
+    <string name="tv_detailEmail">Email</string>
+    <string name="tv_detailLocation">Lokasi</string>
+    <string name="tv_detailFollowers">Pengikut</string>
+    <string name="tv_detailFollowing">Mengikuti</string>
+    <string name="tv_detailBio">Bio</string>
+    <string name="tv_detailNameInformation">NameInformation</string>
+    <string name="tv_detailEmailInformation">EmailInformation</string>
+    <string name="tv_detailLocationInformation">LocationInformation</string>
+    <string name="tv_detailFollowersInformation">FollowersInformation</string>
+    <string name="tv_detailFollowingInformation">FollowingInformation</string>
+    <string name="tv_detailBioInformation">BioInformation</string>
+
+    //Preference Titles
+    <string name="general_header">Umum</string>
+    <string name="reminder_header">Pengingat</string>
+
+    //Language
+    <string name="language_title">Bahasa</string>
+
+    //Alarm
+    <string name="alarm_title">Alarm</string>
+    <string name="alarm_summaryOn">Menyala</string>
+    <string name="alarm_summaryOff">Mati</string>
+</resources>

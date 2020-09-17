@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark"
+    android:padding="12dp">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_includeTabs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35"/>
+
+    <TextView
+        android:id="@+id/tv_detailName"
+        style="@style/IncludeTabsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:text="@string/tv_detailName"
+        android:textColor="@color/colorWhite"
+        app:drawableStartCompat="@drawable/ic_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_detailEmail"
+        style="@style/IncludeTabsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:text="@string/tv_detailEmail"
+        android:textColor="@color/colorWhite"
+        app:drawableStartCompat="@drawable/ic_email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_detailName" />
+
+    <TextView
+        android:id="@+id/tv_detailLocation"
+        style="@style/IncludeTabsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:text="@string/tv_detailLocation"
+        android:textColor="@color/colorWhite"
+        app:drawableStartCompat="@drawable/ic_location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_detailEmail" />
+
+    <TextView
+        android:id="@+id/tv_detailFollowers"
+        style="@style/IncludeTabsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:text="@string/tv_detailFollowers"
+        android:textColor="@color/colorWhite"
+        app:drawableStartCompat="@drawable/ic_follow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_detailLocation" />
+
+    <TextView
+        android:id="@+id/tv_detailFollowing"
+        style="@style/IncludeTabsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:text="@string/tv_detailFollowing"
+        android:textColor="@color/colorWhite"
+        app:drawableStartCompat="@drawable/ic_follow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_detailFollowers" />
+
+    <TextView
+        android:id="@+id/tv_detailBio"
+        style="@style/IncludeTabsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:text="@string/tv_detailBio"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_detailFollowing"
+        app:drawableStartCompat="@drawable/ic_bio" />
+
+    <TextView
+        android:id="@+id/tv_detailNameInformation"
+        style="@style/IncludeTabsTextInformation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="@string/tv_detailNameInformation"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintStart_toStartOf="@+id/guideline_includeTabs"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_detailEmailInformation"
+        style="@style/IncludeTabsTextInformation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:text="@string/tv_detailEmailInformation"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintStart_toStartOf="@+id/guideline_includeTabs"
+        app:layout_constraintTop_toBottomOf="@id/tv_detailNameInformation" />
+
+    <TextView
+        android:id="@+id/tv_detailLocationInformation"
+        style="@style/IncludeTabsTextInformation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="@string/tv_detailLocationInformation"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintStart_toStartOf="@+id/guideline_includeTabs"
+        app:layout_constraintTop_toBottomOf="@id/tv_detailEmailInformation" />
+
+    <TextView
+        android:id="@+id/tv_detailFollowersInformation"
+        style="@style/IncludeTabsTextInformation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_detailFollowersInformation"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintStart_toStartOf="@+id/guideline_includeTabs"
+        app:layout_constraintTop_toBottomOf="@id/tv_detailLocationInformation" />
+
+    <TextView
+        android:id="@+id/tv_detailFollowingInformation"
+        style="@style/IncludeTabsTextInformation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_detailFollowingInformation"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintStart_toStartOf="@+id/guideline_includeTabs"
+        app:layout_constraintTop_toBottomOf="@id/tv_detailFollowersInformation" />
+
+    <TextView
+        android:id="@+id/tv_detailBioInformation"
+        style="@style/IncludeTabsTextInformation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="3"
+        android:text="@string/tv_detailBioInformation"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintStart_toStartOf="@+id/guideline_includeTabs"
+        app:layout_constraintTop_toBottomOf="@id/tv_detailFollowingInformation" />
+</androidx.constraintlayout.widget.ConstraintLayout>

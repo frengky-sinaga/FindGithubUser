@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ConsumerApp</string>
+
+    <string name="splashText">View your own favorites</string>
+    <string name="toolbarFavs">Favorites</string>
+
+    //for item_list_favorites
+    <string name="item_name">Username</string>
+    <string name="item_email">Email</string>
+    <string name="item_contentDesc">Delete Favorite</string>
+    <string name="item_username">Username</string>
+    <string name="item_htmlUrl">Html Url</string>
+    <string name="item_contentDescription">User Image</string>
+</resources>
