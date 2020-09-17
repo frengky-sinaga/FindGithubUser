@@ -15,15 +15,15 @@ interface ApiService {
     @GET("/search/users")
     fun getListUsers(@Query("q") q: String): Call<ResponseUser>
 
-    @Headers("Authorization: token 30061bc156e3d8fb2c8a503d2af781dbf68eaa73")
+    @Headers("Authorization: token ${BuildConfig.ApiKey}")
     @GET("/users/{username}")
     fun getDetailUser(@Path("username") user: String): Call<DetailUser>
 
-    @Headers("Authorization: token 30061bc156e3d8fb2c8a503d2af781dbf68eaa73")
+    @Headers("Authorization: token ${BuildConfig.ApiKey}")
     @GET("/users/{username}/followers")
     fun getFollowersUser(@Path("username") user: String): Call<List<DataItem>>
 
-    @Headers("Authorization: token 30061bc156e3d8fb2c8a503d2af781dbf68eaa73")
+    @Headers("Authorization: token ${BuildConfig.ApiKey}")
     @GET("/users/{username}/following")
     fun getFollowingUser(@Path("username") user: String): Call<List<DataItem>>
 }
