@@ -3,9 +3,6 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
-def API_KEY = '"' + ApiKey + '"' ?: '"Api Key"'
-def STRING = 'String'
-
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
@@ -18,9 +15,6 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        each{type->
-            type.buildConfigField STRING, 'ApiKey', API_KEY
-        }
     }
 
     buildTypes {
