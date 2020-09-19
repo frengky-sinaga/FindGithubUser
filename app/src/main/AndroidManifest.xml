@@ -24,8 +24,8 @@
             android:authorities="com.project.findgithubuser.provider"
             android:enabled="true"
             android:exported="true"
-            android:readPermission="com.project.findgithubuser.READ_DATABASE"
-            android:writePermission="com.project.findgithubuser.WRITE_DATABASE"/>
+            android:readPermission="com.project.findgithubuser.provider.READ_DATABASE"
+            android:writePermission="com.project.findgithubuser.provider.WRITE_DATABASE"/>
 
         <receiver
             android:name=".broadcast.AlarmReceiver"
