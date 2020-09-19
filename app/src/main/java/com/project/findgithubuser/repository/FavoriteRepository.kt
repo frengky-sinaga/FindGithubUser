@@ -8,8 +8,6 @@ class FavoriteRepository(private val favoritesDao: FavoriteDao) {
 
     val readAllData: LiveData<List<FavoriteEntity>> = favoritesDao.readAllData()
 
-    fun cursorReadAll() = favoritesDao.cursorReadAll()
-
     suspend fun addFavorite(favorite: FavoriteEntity) {
         favoritesDao.addFavorite(favorite)
     }

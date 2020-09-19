@@ -6,9 +6,11 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
-    <permission
-        android:name="com.project.findgithubuser.READ_DATABASE"
-        android:protectionLevel="normal" />
+    <permission android:name="com.project.findgithubuser.READ_DATABASE"
+        android:protectionLevel="normal"/>
+
+    <permission android:name="com.project.findgithubuser.WRITE_DATABASE"
+        android:protectionLevel="normal"/>
 
     <application
         android:allowBackup="true"
@@ -18,11 +20,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <provider
-            android:name=".provider.AppProvider"
+            android:name=".provider.ContentProvider"
             android:authorities="com.project.findgithubuser"
             android:enabled="true"
             android:exported="true"
-            android:readPermission="com.project.findgithubuser.READ_DATABASE" />
+            android:readPermission="com.project.findgithubuser.READ_DATABASE"
+            android:writePermission="com.project.findgithubuser.WRITE_DATABASE"/>
 
         <receiver
             android:name=".broadcast.AlarmReceiver"
@@ -34,8 +37,10 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
+
 </manifest>
