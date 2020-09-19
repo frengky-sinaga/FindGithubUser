@@ -1,5 +1,6 @@
 package com.project.consumer
 
+import android.database.Cursor
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,7 +8,7 @@ import android.os.Bundle
 class MainActivity : AppCompatActivity() {
 
     companion object {
-        private const val authority = "com.project.findgithubuser"
+        private const val authority = "com.project.findgithubuser.provider"
         private const val table = "favorites_table"
         private const val content = "content"
     }
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             .build()
 
         val contentResolver = this.contentResolver
-        val cursor = contentResolver.query(
+        val cursor: Cursor? = contentResolver.query(
             uri,
             null,
             null,

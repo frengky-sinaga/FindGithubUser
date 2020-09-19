@@ -12,7 +12,7 @@ import java.lang.UnsupportedOperationException
 class ContentProvider : ContentProvider() {
 
     companion object{
-        private const val authority = "com.project.findgithubuser"
+        private const val authority = "com.project.findgithubuser.provider"
         private const val table = "favorites_table"
         private const val id = 1
         private val uriMatcher = UriMatcher(UriMatcher.NO_MATCH).apply {
