@@ -32,6 +32,7 @@ import com.project.findgithubuser.utils.log
 import com.project.findgithubuser.utils.toast
 import com.project.findgithubuser.viewmodels.DetailViewModel
 import com.project.findgithubuser.viewmodels.SharedViewModel
+import com.project.findgithubuser.views.fragments.HomeFragment
 import kotlinx.android.synthetic.main.include_detail.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -99,15 +100,19 @@ class DetailFragment : Fragment() {
                 floatingActionButton.setImageResource(R.drawable.ic_unfavorite)
                 state = false
                 favoriteViewModel.deleteFavorite(name)
+                val delete = resources.getString(R.string.deleteFromFavorites)
                 log("delete")
+                toast(activity, "$name $delete")
             } else {
                 val email = tv_detailEmailInformation.text.toString()
                 val favorite = FavoriteEntity(0, bitmap!!, url, name, email)
+                val add = resources.getString(R.string.addToFavorites)
 
                 floatingActionButton.setImageResource(R.drawable.ic_favorite)
                 state = true
                 favoriteViewModel.addFavorite(favorite)
                 log("add")
+                toast(activity, "$name $add")
             }
         }
     }
@@ -211,9 +216,18 @@ class DetailFragment : Fragment() {
                         nestedScrollView.visibility = View.VISIBLE
                     }
                 }
-
             } else {
                 toast(activity, resources.getString(R.string.failedToLoad))
+                val mFragmentManager = activity?.supportFragmentManager
+                val mHomeFragment = HomeFragment()
+                mFragmentManager?.beginTransaction()?.apply {
+                    replace(
+                        R.id.frame_container,
+                        mHomeFragment,
+                        HomeFragment::class.java.simpleName
+                    )
+                    commit()
+                }
             }
         })
     }

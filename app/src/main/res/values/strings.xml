@@ -36,6 +36,9 @@
     <string name="titleDetail">Detail User</string>
     <string name="img_detailDescription">Avatar User</string>
     <string name="failedToLoad">Failed to load detail user</string>
+    <string name="addToFavorites">has been added to Favorites</string>
+    <string name="deleteFromFavorites">has been deleted from Favorites</string>
+
 
     //for favoritesFragment
     <string name="toolbar_favorites">Favorites</string>

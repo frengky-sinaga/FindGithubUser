@@ -8,16 +8,16 @@ import android.net.Uri
 import com.project.findgithubuser.database.FavoriteDao
 import com.project.findgithubuser.database.FavoriteDatabase
 import com.project.findgithubuser.utils.log
-import java.lang.IllegalArgumentException
 
 class ContentProvider : ContentProvider() {
 
-    companion object{
+    companion object {
         private const val authority = "com.project.findgithubuser"
         private const val table = "favorites_table"
         private const val id = 1
 
         private val uriMatcher = UriMatcher(UriMatcher.NO_MATCH)
+
         init {
             uriMatcher.addURI(authority, table, id)
         }
@@ -35,7 +35,7 @@ class ContentProvider : ContentProvider() {
         uri: Uri, projection: Array<String>?, selection: String?,
         selectionArgs: Array<String>?, sortOrder: String?
     ): Cursor? {
-        return when(uriMatcher.match(uri)){
+        return when (uriMatcher.match(uri)) {
             id -> dao.cursorReadAll()
             else -> throw IllegalArgumentException("Unknown Uri: $uri")
         }

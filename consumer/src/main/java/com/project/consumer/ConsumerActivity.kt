@@ -1,13 +1,14 @@
 package com.project.consumer
 
-import android.database.ContentObserver
 import android.database.Cursor
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.HandlerThread
-import android.util.Log
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.project.consumer.adapter.ConsumerAdapter
+import com.project.consumer.entity.FavoriteEntity
+import com.project.consumer.utils.Converters
+import kotlinx.android.synthetic.main.activity_consumer.*
 
 class ConsumerActivity : AppCompatActivity() {
 
@@ -23,6 +24,8 @@ class ConsumerActivity : AppCompatActivity() {
             .build()
     }
 
+    private lateinit var adapter: ConsumerAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_consumer)
@@ -31,26 +34,34 @@ class ConsumerActivity : AppCompatActivity() {
     }
 
     private fun getData() {
-        try {
-            Log.d("AppLog", "Uri: $uri")
-            val handlerThread = HandlerThread("DataObserver")
-            handlerThread.start()
-            val handler = Handler(handlerThread.looper)
-
-            val myObserver = object : ContentObserver(handler){
-                override fun onChange(selfChange: Boolean) {
-                    super.onChange(selfChange)
-                    loadDataAsync()
-                }
-            }
-            contentResolver.registerContentObserver(uri, true, myObserver)
-        }catch (e: Throwable){
-            Log.d("AppLog", "Throw: ${e.message}")
+        val cursor = contentResolver.query(uri, null, null, null, null)
+        if (cursor != null){
+            val data = getDataCursor(cursor)
+            showRecycleList(data)
         }
-
     }
 
-    private fun loadDataAsync(){
-        Log.d("AppLog", "Connect")
+    private fun getDataCursor(cursor: Cursor): ArrayList<FavoriteEntity>{
+        val result = ArrayList<FavoriteEntity>()
+        cursor.apply {
+            while (moveToNext()){
+                val img = getBlob(getColumnIndexOrThrow("img"))
+                val converter = Converters()
+                val imgConverted = converter.toBitmap(img)
+                val email = getString(getColumnIndexOrThrow("email"))
+                val username = getString(getColumnIndexOrThrow("username"))
+                val favorite = FavoriteEntity(imgConverted, email, username)
+                result.add(favorite)
+            }
+        }
+        return result
+    }
+
+    private fun showRecycleList(data: ArrayList<FavoriteEntity>){
+        adapter = ConsumerAdapter(ArrayList())
+        rv_favorites.setHasFixedSize(true)
+        rv_favorites.layoutManager = LinearLayoutManager(this)
+        rv_favorites.adapter = adapter
+        adapter.addNewData(data)
     }
 }

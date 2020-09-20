@@ -37,6 +37,8 @@
     <string name="titleDetail">Detail Pengguna</string>
     <string name="img_detailDescription">Avatar User</string>
     <string name="failedToLoad">Gagal memuat detail pengguna</string>
+    <string name="addToFavorites">telah ditambahkan ke Kesukaan</string>
+    <string name="deleteFromFavorites">telah dihapus dari Kesukaan</string>
 
     //for favoritesFragment
     <string name="toolbar_favorites">Kesukaan</string>
