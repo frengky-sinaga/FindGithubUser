@@ -7,24 +7,27 @@ import android.database.Cursor
 import android.net.Uri
 import com.project.findgithubuser.database.FavoriteDao
 import com.project.findgithubuser.database.FavoriteDatabase
-import java.lang.UnsupportedOperationException
+import com.project.findgithubuser.utils.log
+import java.lang.IllegalArgumentException
 
 class ContentProvider : ContentProvider() {
 
     companion object{
-        private const val authority = "com.project.findgithubuser.provider"
+        private const val authority = "com.project.findgithubuser"
         private const val table = "favorites_table"
         private const val id = 1
-        private val uriMatcher = UriMatcher(UriMatcher.NO_MATCH).apply {
-            addURI(authority, table, id)
+
+        private val uriMatcher = UriMatcher(UriMatcher.NO_MATCH)
+        init {
+            uriMatcher.addURI(authority, table, id)
         }
     }
 
-    private val dao: FavoriteDao by lazy {
-        FavoriteDatabase.getDatabase(requireNotNull(context)).favoriteDao()
-    }
+    private lateinit var dao: FavoriteDao
 
     override fun onCreate(): Boolean {
+        dao = context?.let { FavoriteDatabase.getDatabase(it).favoriteDao() }!!
+        log("Content Provider Created : $uriMatcher")
         return true
     }
 
@@ -34,26 +37,26 @@ class ContentProvider : ContentProvider() {
     ): Cursor? {
         return when(uriMatcher.match(uri)){
             id -> dao.cursorReadAll()
-            else -> null
+            else -> throw IllegalArgumentException("Unknown Uri: $uri")
         }
     }
 
     override fun getType(uri: Uri): String? {
-        throw UnsupportedOperationException()
+        return null
     }
 
     override fun insert(uri: Uri, values: ContentValues?): Uri? {
-        throw UnsupportedOperationException()
+        return null
     }
 
     override fun update(
         uri: Uri, values: ContentValues?, selection: String?,
         selectionArgs: Array<String>?
     ): Int {
-        throw UnsupportedOperationException()
+        return 0
     }
 
     override fun delete(uri: Uri, selection: String?, selectionArgs: Array<String>?): Int {
-        throw UnsupportedOperationException()
+        return 0
     }
 }
