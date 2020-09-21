@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Consumer</string>
+
+    <string name="favorites">Kesukaan</string>
+    <string name="item_username">Username</string>
+    <string name="item_email">Email</string>
+</resources>
